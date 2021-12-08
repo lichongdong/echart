@@ -1,0 +1,245 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    padding:0;
+    margin:0;
+    background: url('../images/bg.jpg') no-repeat #000;
+    background-size: cover;
+    line-height: 1.15;
+}
+/* 声明字体*/
+@font-face {
+    font-family: electronicFont;
+    src: url(../font/DS-DIGIT.TTF);
+}
+li{
+    list-style: none;
+}
+header{
+    position: relative;
+    background: url('../images/head_bg.png') no-repeat top center;
+    height: 1.25rem;
+    background-size:100% 100%;
+    h1{
+        color:#ccc;
+        text-align: center;
+        line-height: 1rem;
+    }
+    .showTime{
+        position: absolute;
+        top:0;
+        right:.625rem;
+        color:#ccc;
+        line-height: .9375rem;
+    }
+}
+.mainBox{
+    min-width: 1024px;
+    max-width: 1920px;
+    display:flex;
+    .column{
+        flex:3;
+        color:#ccc;
+        padding: .1875rem .1875rem 0;
+        &:nth-child(2){
+            flex:5;
+            overflow: hidden;
+        }
+    }
+}
+.panel{
+    position:relative;
+    height:3.75rem;
+    padding:.1875rem 0px;
+    margin-bottom:.3125rem;
+    border: 1px solid rgba(25, 186, 139, 0.17);
+    background: rgba(255, 255, 255, 0.04) url(../images/line\(1\).png);
+    &::before{
+        position:absolute;
+        top:0;
+        left:0;
+        content:"";
+        width:10px;
+        height:10px;
+        border-top:2px solid #02a6b5;
+        border-left:2px solid #02a6b5;
+    }
+    &::after{
+        position: absolute;
+        top:0;
+        right:0;
+        content:"";
+        width:10px;
+        height:10px;
+        border-top:2px solid #02a6b5;
+        border-right:2px solid #02a6b5;
+    }
+    h2{
+        color:white;
+        text-align:center;
+    }
+    a{
+        text-decoration: none;
+        font-size:10px;
+        color:blue
+    }
+}
+.panel_footer{
+    width:100%;
+    position: absolute;
+    position:absolute;
+    left:0;
+    bottom:0;
+    &::before{
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:10px;
+        height:10px;
+        content:"";
+        border-bottom:2px solid #02a6b5;
+        border-left:2px solid #02a6b5;
+    }
+    &::after{
+        position:absolute;
+        bottom:0;
+        right:0;
+        content:"";
+        width:10px;
+        height:10px;
+        border-bottom:2px solid #02a6b5;
+        border-right:2px solid #02a6b5;
+    }
+}
+.chart{
+    height:3rem;
+}
+.no{
+    background: rgba(101, 132, 226, 0.1);
+    padding:.3125rem;
+    .no_hd{
+        position: relative;
+        border: 1px solid rgba(25, 186, 139, 0.17);
+        &::before{
+            position: absolute;
+            content:"";
+            top:0;
+            left:0;
+            width:30px;
+            height:10px;
+            border-top:2px solid #02a6b5;
+            border-left:2px solid #02a6b5;
+        }
+        &::after{
+            position: absolute;
+            content:"";
+            bottom:0;
+            right:0;
+            width:30px;
+            height:10px;
+            border-bottom:2px solid #02a6b5;
+            border-right:2px solid #02a6b5;
+        }
+        ul{
+            display:flex;
+            li{
+                flex:1;
+                position: relative;
+                height:1.25rem;
+                line-height:1.25rem;
+                text-align: center;
+                font-family: electronicFont;
+                font-weight: bold;
+                color:#ffeb7b;
+                font-size:.875rem;
+                &:first-child::after{
+                    content:"";
+                    position: absolute;
+                    top:25%;
+                    right:0;
+                    width:1px;
+                    height:50%;
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+}
+.no_bd ul{
+    display:flex;
+    li{
+        flex:1;
+        text-align: center;
+        height:.5rem;
+        line-height:.5rem;
+    }
+}
+.map{
+    height:10.125rem;
+    position: relative;
+    .map1,
+    .map2,
+    .map3 {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background:url(../images/map.png) no-repeat;
+        width:6.475rem;
+        height:6.475rem;
+        background-size:100% 100%;
+        opacity: 0.3;
+    }
+    .map2{
+        width:8.0375rem;
+        height:8.0375rem;
+        background-image:url(../images/lbx.png);
+        opacity: 0.6;
+        z-index:2;
+        animation:rotate 15s linear infinite;
+    }
+    .map3{
+        width:7.075rem;
+        height:7.075rem;
+        background-image:url(../images/jt.png);
+        animation:rotate1 10s linear infinite;
+    }
+    .charts{
+        width:100%;
+        height:25rem;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+    @keyframes rotate{
+        from{
+            transform:translate(-50%,-50%) rotate(0deg);
+        }
+        to{
+            transform:translate(-50%,-50%) rotate(360deg);
+        }
+    }
+    @keyframes rotate1{
+        from{
+            transform:translate(-50%,-50%) rotate(0deg);
+        }
+        to{
+            transform:translate(-50%,-50%) rotate(360deg);
+        }
+    }
+}
+/* 约束屏幕尺寸 */
+@media screen and (max-width: 1024px) {
+    html {
+      font-size: 42px !important;
+    }
+  }
+  @media screen and (min-width: 1920px) {
+    html {
+      font-size: 80px !important;
+    }
+  }
